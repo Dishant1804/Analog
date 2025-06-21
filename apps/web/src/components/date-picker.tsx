@@ -46,12 +46,16 @@ export function DatePicker() {
       month={displayedMonth}
       onMonthChange={setDisplayedMonth}
       className={cn("w-full px-0 [&_[role=gridcell]]:w-[33px]")}
-      todayClassName="[&>button]:!bg-sidebar-primary hover:[&>button]:!bg-sidebar-primary [&>button]:font-medium hover:opacity-80"
+      todayClassName="[&>button]:!bg-sidebar-primary [&>button:hover]:!bg-sidebar-primary [&>button]:!text-sidebar-primary-foreground [&>button]:font-medium hover:opacity-80"
       selectedClassName={cn(
-        "[&>button]:text-sidebar-primary-foreground hover:[&>button]:text-sidebar-primary-foreground hover:filter hover:brightness-[0.8] focus:[&>button]:bg-sidebar-primary focus:[&>button]:text-sidebar-primary-foreground",
+        "[&>button]:text-sidebar-primary",
+        "[&>button:hover]:text-sidebar-primary-foreground",
+        "[&>button:hover]:filter [&>button:hover]:brightness-[0.8]",
+        "[&>button:focus]:bg-sidebar-primary",
+        "[&>button:focus]:text-sidebar-primary-foreground",
         "[&>button]:bg-transparent",
         isDayView &&
-          "dark:[&>button]:!bg-sidebar-foreground/10 [&>button]:!bg-sidebar-foreground/5",
+        "dark:[&>button]:!bg-sidebar-foreground/10 [&>button]:!bg-sidebar-foreground/5",
       )}
       dayButtonClassName="dark:hover:bg-sidebar-foreground/15"
       weekClassName={cn(
